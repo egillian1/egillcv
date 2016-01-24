@@ -1,6 +1,6 @@
 {
   "name": "egillcv",
-  "description":"Curriculum vitae of Egill Ian Guðmundsson",
+  "description": "Curriculum vitae of Egill Ian Guðmundsson",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -14,5 +14,8 @@
     "jade": "~1.11.0",
     "morgan": "~1.6.1",
     "serve-favicon": "~2.3.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0"
   }
 }
