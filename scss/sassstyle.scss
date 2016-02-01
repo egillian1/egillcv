@@ -1,0 +1,15 @@
+/* Media query breakpoints */
+$break-small: 320px;
+$break-medium: 768px;
+$break-large: 1200px;
+
+/* Other variables */
+$font-stack:    Verdana,Helvetica, sans-serif;
+$primary-color: #000;
+
+@media screen and (max-width: $break-small){
+  body {
+    font: 100% $font-stack;
+    color: #f03;
+  }
+}

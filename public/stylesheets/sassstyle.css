@@ -1,0 +1,6 @@
+/* Media query breakpoints */
+/* Other variables */
+@media screen and (max-width: 320px) {
+  body {
+    font: 100% Verdana, Helvetica, sans-serif;
+    color: #f03; } }
