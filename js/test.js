@@ -1,5 +1,3 @@
 'use strict';
 
-var tmp = 1;
-
-tmp = 42;
+$('li').attr('color','#f00');

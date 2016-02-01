@@ -12,6 +12,7 @@ var users = require('./routes/users');
 
 var app = express();
 var router = express.Router();
+var routes = require('./routes/index');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -65,10 +66,18 @@ app.get('/', function(req, res) {
 });
 
 // bind the app to listen for connections on a specified port
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 1337;
 app.listen(port);
 
-// Render some console log output
+// Render some console log output for port number.
 console.log("Listening on port " + port);
+
+app.use(express.static(path.join(__dirname, 'public')));
+  // Command for allowing server access to /public folder
+app.use('/public', express.static(__dirname + '/public'));
+// Command for allowing server access to /bower_components folder
+app.use('/bower_components', express.static(__dirname + '/bower_components'));
+
+app.use('/',routes);
 
 module.exports = app;
