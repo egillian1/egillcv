@@ -1,0 +1,74 @@
+// Variables
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+$primary-color: #050;
+
+// "General" rules
+
+* {
+  font-family: 'Open Sans', sans-serif;
+  word-wrap: break-word;
+}
+
+.mainContainer{
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+
+// Header
+
+nav {
+  width: 50%;
+  height: 40%;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  height: 20%;
+  position: relative;
+  color: #ffffff;
+  background-color: #444;
+  h1, h2 {
+    margin: 0 auto;
+  }
+}
+
+// Contact information section
+
+.contact {
+  width: 20%;
+}
+
+// Main info section
+
+.info {
+  width: 80%;
+}
+
+.infoEntry {
+  width: 80%;
+}
+
+.infoRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  h4 {
+    margin-top: 0;
+  }
+}
+
+.year {
+  width: 15%;
+  margin-right: 5%;
+}
