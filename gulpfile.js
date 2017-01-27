@@ -8,6 +8,7 @@ var reload = browserSync.reload;
 var nodemon = require('gulp-nodemon');
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var pug = require('gulp-pug');
 
 /**
  * Gulp Tasks
@@ -23,14 +24,15 @@ var sass = require('gulp-sass');
      });
  });
 
- gulp.task('serve', ['sass'], function() {
+ gulp.task('serve', ['sass', 'pug'], function() {
 
      browserSync.init({
          server: "./public"
      });
 
-     gulp.watch("./scss/*.scss", ['sass', browserSync.reload]);
-     gulp.watch("./public/*.html").on('change', browserSync.reload);
+     gulp.watch("./src/scss/*.scss", ['sass', browserSync.reload]);
+     gulp.watch('./src/views/**/*.pug', ['pug'])
+     .on('change', browserSync.reload);
  });
 
  // Compile sass into CSS & auto-inject into browsers
@@ -40,5 +42,11 @@ var sass = require('gulp-sass');
          .pipe(gulp.dest("./public/css"))
          .pipe(browserSync.stream());
  });
+
+ gulp.task('pug', function buildHTML() {
+  return gulp.src('./src/views/*.pug')
+  .pipe( pug( {pretty: true}))
+  .pipe( gulp.dest('./public'));
+});
 
  gulp.task('default', ['serve']);
